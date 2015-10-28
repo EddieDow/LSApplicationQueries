@@ -6,4 +6,4 @@ Result:
 
 App can invoke Skype/Wechat/Telephone/Messgaes app successful need not put skype / wechat/ tel / sms into LSApplicationQueriesScheme list.
 
-Apple changed the policy of control query scheme already?  need find document. 
+Apple changed the policy of control query scheme already?  need find official document. 
