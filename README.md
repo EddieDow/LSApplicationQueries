@@ -1,9 +1,15 @@
-# LSApplicationQueries
+# LSApplicationQueriesSchemes
 
-The testing against Xcode 7.0.1, iOS is 9.0.2
+The project to verify how LSApplicationQueries strategy work on iOS 9
+
+The testing against Xcode 7.1, iOS is 9.1
 
 Result: 
 
-App can invoke Skype/Wechat/Telephone/Messgaes app successful need not put skype / wechat/ tel / sms into LSApplicationQueriesScheme list.
 
-Apple changed the policy of control query scheme already?  need find official document. 
+If did not add Skype/WeChat into LSApplicationQueriesSchemes list, canOpenURL will return false, error like ' -canOpenURL: failed for URL: "skype://" - error: "This app is not allowed to query for scheme skype"' ,but openURL still can open skype/wechat success.
+
+No matter add SMS/TEL into LSApplicationQueriesSchemes list or not, canOpenURL always return true, openURL also can open Messages/Telephone success.
+
+
+
