@@ -48,20 +48,39 @@
 -(void)openSkype {
     NSString *str = @"skype://";
     
+    BOOL isOpenable = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:str]];
+    NSLog(@"WhiteList does not contian skype,  skype canOpenURL return  =  %d", isOpenable);
+    
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 
 -(void)openWeChat {
     NSString *str = @"wechat://";
     
+    BOOL isOpenable = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:str]];
+    
+     NSLog(@"WhiteList contain wechat,  wechat canOpenURL return  =  %d", isOpenable);
+    
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 
 -(void)openTele {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://8008808888"]];
+    NSString *str = @"tel://8008808888";
+    
+    BOOL isOpenable = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:str]];
+    
+    NSLog(@"WhiteList does not contian Tel,  TEL canOpenURL return  =  %d", isOpenable);
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: str]];
 }
 
 -(void)openSMS {
+    NSString *str = @"sms://800888";
+    
+    BOOL isOpenable = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:str]];
+    
+     NSLog(@"WhiteList does not contian SMS,  SMS canOpenURL return  =  %d", isOpenable);
+    
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"sms://800888"]];
 }
 
